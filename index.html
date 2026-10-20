@@ -1,0 +1,3398 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio Aura | Design de Interiores de Alto Padrão • São Paulo</title>
+  <meta name="description"
+    content="Studio Aura por Marina Vasconcelos. Escritório de arquitetura e design de interiores de alto padrão em São Paulo. O luxo discreto que reside nos detalhes, luz e matéria.">
+
+  <!-- Google Fonts: Cormorant Garamond (Editorial Serif de Luxo), Plus Jakarta Sans (UI e Leitura), JetBrains Mono (Metadados Técnicos) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@300;400;500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       DESIGN SYSTEM • STUDIO AURA (QUIET LUXURY / LUXO DISCRETO)
+       ========================================================================== */
+    :root {
+      /* Paleta Primária & Superfícies (Tons escuros, aveludados, profundos - Sem preto puro #000) */
+      --bg-base: #0B0B0A;
+      --bg-surface-1: #121210;
+      --bg-surface-2: #181715;
+      --bg-surface-card: #1D1C19;
+      --bg-glass: rgba(14, 14, 13, 0.78);
+      --bg-glass-card: rgba(24, 23, 21, 0.65);
+
+      /* Acentos Dourados / Champagne Gold / Latão Escovado (Refinado, nobre, desaturado) */
+      --gold-primary: #C5A059;
+      --gold-light: #E4CFA9;
+      --gold-dark: #8E7036;
+      --gold-subtle: rgba(197, 160, 89, 0.15);
+      --gold-border: rgba(197, 160, 89, 0.28);
+      --gold-glow: rgba(197, 160, 89, 0.12);
+
+      /* Tipografia & Contrastes */
+      --text-main: #F5F3EF;
+      --text-muted: #A6A095;
+      --text-dim: #6E685F;
+      --text-inverse: #0C0C0B;
+
+      /* Bordas e Divisores estruturais */
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-card: rgba(255, 255, 255, 0.05);
+
+      /* Fontes */
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      /* Física de Animação e Transições */
+      --ease-lux: cubic-bezier(0.16, 1, 0.3, 1);
+      --duration-fast: 0.25s;
+      --duration-normal: 0.5s;
+      --duration-slow: 0.85s;
+
+      /* Geometria e Contêineres */
+      --max-width: 1400px;
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 14px;
+    }
+
+    /* Reset & Base */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    body {
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Grão Sutil Cinematográfico (Pointer events none e fixed para performance máxima) */
+    .film-grain {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 99;
+      opacity: 0.032;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    /* Container Padrão */
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: clamp(1.25rem, 5vw, 3.5rem);
+      padding-right: clamp(1.25rem, 5vw, 3.5rem);
+    }
+
+    /* Tipografia de Exibição */
+    h1,
+    h2,
+    h3,
+    h4,
+    .font-serif {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      letter-spacing: -0.015em;
+      line-height: 1.15;
+    }
+
+    .font-mono {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold-primary);
+    }
+
+    p {
+      color: var(--text-muted);
+      font-weight: 300;
+      line-height: 1.75;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color var(--duration-fast) ease;
+    }
+
+    img,
+    video {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ==========================================================================
+       COMPONENTES REUTILIZÁVEIS & ESTILOS GLOBAIS
+       ========================================================================== */
+    .tag-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.4rem 1rem;
+      border: 1px solid var(--gold-border);
+      background: rgba(197, 160, 89, 0.04);
+      border-radius: var(--radius-sm);
+      color: var(--gold-light);
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      backdrop-filter: blur(8px);
+      width: fit-content;
+    }
+
+    .tag-badge .dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: var(--gold-primary);
+      box-shadow: 0 0 8px var(--gold-primary);
+      animation: pulseDot 2.8s infinite ease-in-out;
+    }
+
+    @keyframes pulseDot {
+
+      0%,
+      100% {
+        opacity: 0.4;
+        transform: scale(0.9);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.25);
+      }
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.85rem;
+      padding: 0.95rem 2rem;
+      font-family: var(--font-sans);
+      font-size: 0.825rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: all var(--duration-fast) var(--ease-lux);
+      border: 1px solid transparent;
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+      color: #0E0D0B;
+      border-color: var(--gold-light);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+    }
+
+    .btn-gold:hover {
+      background: linear-gradient(135deg, var(--gold-light), var(--gold-primary));
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(197, 160, 89, 0.25);
+      color: #000;
+    }
+
+    .btn-gold:active {
+      transform: translateY(0);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-main);
+      border: 1px solid var(--border-subtle);
+      backdrop-filter: blur(8px);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold-primary);
+      color: var(--gold-light);
+      background: rgba(197, 160, 89, 0.05);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline:active {
+      transform: translateY(0);
+    }
+
+    /* Linha Dourada Divisora de Seção */
+    .section-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-subtle), var(--gold-border), var(--border-subtle), transparent);
+    }
+
+    .section-header {
+      margin-bottom: clamp(3rem, 6vw, 5.5rem);
+    }
+
+    .section-title {
+      font-size: clamp(2.2rem, 4.5vw, 4.2rem);
+      margin-top: 1rem;
+      color: var(--text-main);
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--gold-light);
+      font-weight: 300;
+    }
+
+    .section-subtitle {
+      max-width: 60ch;
+      margin-top: 1.25rem;
+      font-size: 1.05rem;
+    }
+
+    /* ==========================================================================
+       HEADER & BARRA DE NAVEGAÇÃO FLUTUANTE
+       ========================================================================== */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 80;
+      transition: all var(--duration-normal) var(--ease-lux);
+      padding: 1.6rem 0;
+    }
+
+    .site-header.scrolled {
+      padding: 0.9rem 0;
+      background: var(--bg-glass);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border-subtle);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-logo {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .brand-logo .brand-title {
+      font-family: var(--font-serif);
+      font-size: 1.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-main);
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .brand-logo .brand-tag {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      color: var(--gold-primary);
+      text-transform: uppercase;
+    }
+
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      gap: 2.2rem;
+    }
+
+    .nav-link {
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      position: relative;
+      padding: 0.4rem 0;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 1px;
+      background-color: var(--gold-primary);
+      transition: width var(--duration-fast) var(--ease-lux);
+    }
+
+    .nav-link:hover {
+      color: var(--text-main);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--border-subtle);
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      color: var(--text-main);
+      padding: 10px;
+    }
+
+    /* Menu Mobile Drawer */
+    .mobile-nav-drawer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(11, 11, 10, 0.98);
+      backdrop-filter: blur(24px);
+      z-index: 90;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--duration-normal) var(--ease-lux);
+      padding: 2rem;
+    }
+
+    .mobile-nav-drawer.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mobile-nav-drawer .nav-link {
+      font-size: 1.4rem;
+      font-family: var(--font-serif);
+      letter-spacing: 0.08em;
+      color: var(--text-main);
+    }
+
+    .mobile-close-btn {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ==========================================================================
+       HERO SECTION (VÍDEO DE FUNDO CINEMATOGRÁFICO)
+       ========================================================================== */
+    .hero-section {
+      position: relative;
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      padding-top: 12rem;
+      padding-bottom: clamp(3.5rem, 6vw, 5.5rem);
+      overflow: hidden;
+    }
+
+    .hero-media-wrapper {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .hero-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.05);
+      animation: gentleZoom 30s infinite alternate ease-in-out;
+    }
+
+    @keyframes gentleZoom {
+      0% {
+        transform: scale(1.02);
+      }
+
+      100% {
+        transform: scale(1.09);
+      }
+    }
+
+    /* Overlay escuro de luxo para contraste perfeito e fusão na base */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      background: radial-gradient(ellipse 80% 60% at 30% 40%, transparent 0%, rgba(8, 7, 6, 0.55) 100%),
+        linear-gradient(180deg,
+          rgba(11, 11, 10, 0.45) 0%,
+          rgba(11, 11, 10, 0.65) 45%,
+          rgba(11, 11, 10, 0.95) 88%,
+          var(--bg-base) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-headline {
+      max-width: 900px;
+      font-size: clamp(2.8rem, 5.8vw, 5.4rem);
+      font-weight: 300;
+      line-height: 1.05;
+      color: var(--text-main);
+      margin-top: 1.2rem;
+      margin-bottom: 0;
+      text-align: center;
+    }
+
+    .hero-headline em {
+      font-style: italic;
+      color: var(--gold-light);
+      font-family: var(--font-serif);
+      font-weight: 300;
+    }
+
+    .hero-main-text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 6rem;
+    }
+
+    .hero-description {
+      font-size: clamp(1rem, 1.2vw, 1.2rem);
+      line-height: 1.8;
+      max-width: 52ch;
+      margin-bottom: 2.2rem;
+      color: var(--text-muted);
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      align-items: center;
+      justify-content: center;
+      margin-top: clamp(2rem, 4vw, 3.5rem);
+    }
+
+    /* Controles do Vídeo do Hero */
+    .hero-media-controls {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .sound-toggle-btn {
+      background: rgba(18, 18, 16, 0.75);
+      border: 1px solid var(--border-subtle);
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-light);
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      transition: all var(--duration-fast) ease;
+    }
+
+    .sound-toggle-btn:hover {
+      border-color: var(--gold-primary);
+      transform: scale(1.08);
+      background: rgba(197, 160, 89, 0.12);
+    }
+
+    .sound-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      color: var(--text-muted);
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      left: 50%;
+      bottom: 1.75rem;
+      z-index: 4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.65rem;
+      transform: translateX(-50%);
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 54px;
+      background: linear-gradient(180deg, var(--gold-primary), transparent);
+      transform-origin: top center;
+      animation: pulseLineVertical 2s infinite ease-in-out;
+    }
+
+    @keyframes pulseLineVertical {
+
+      0%,
+      100% {
+        transform: scaleY(0.45);
+        opacity: 0.4;
+      }
+
+      50% {
+        transform: scaleY(1);
+        opacity: 1;
+      }
+    }
+
+    /* ==========================================================================
+       SEÇÃO: FILOSOFIA & MANIFESTO DE LUXO DISCRETO
+       ========================================================================== */
+    .philosophy-section {
+      padding: clamp(6rem, 10vw, 10rem) 0;
+      position: relative;
+    }
+
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: clamp(3rem, 7vw, 7rem);
+      align-items: center;
+    }
+
+    .philosophy-quote {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.4vw, 3.2rem);
+      line-height: 1.25;
+      color: var(--text-main);
+      position: relative;
+    }
+
+    .philosophy-quote::before {
+      content: '“';
+      position: absolute;
+      top: -3rem;
+      left: -1.5rem;
+      font-size: 7rem;
+      color: var(--gold-subtle);
+      font-family: var(--font-serif);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .philosophy-quote em {
+      color: var(--gold-light);
+      font-style: italic;
+    }
+
+    .philosophy-text-blocks {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: clamp(4rem, 7vw, 6rem);
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 3.5rem;
+    }
+
+    .pillar-card {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .pillar-num {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--gold-primary);
+    }
+
+    .pillar-title {
+      font-family: var(--font-serif);
+      font-size: 1.55rem;
+      color: var(--text-main);
+      font-weight: 400;
+    }
+
+    .pillar-desc {
+      font-size: 0.925rem;
+      line-height: 1.7;
+    }
+
+    /* ==========================================================================
+       SEÇÃO: PROCESSO DE TRABALHO EM 3 ETAPAS COM VÍDEO DAS CAMADAS
+       ========================================================================== */
+    .process-section {
+      padding: 0;
+      background: radial-gradient(circle at 80% 20%, rgba(197, 160, 89, 0.035) 0%, transparent 60%);
+      position: relative;
+    }
+
+    .process-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: center;
+    }
+
+    /* Container do Vídeo das Camadas de Projeto */
+    .process-video-frame {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-card);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7);
+      background: var(--bg-surface-1);
+    }
+
+    .process-video-frame::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-md);
+      pointer-events: none;
+    }
+
+    .process-video-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 1.4rem;
+      background: rgba(14, 14, 13, 0.9);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .process-video-title {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .process-video-title .pulse {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #25D366;
+    }
+
+    .process-video-tag {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--gold-light);
+    }
+
+    .layers-video {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      display: block;
+    }
+
+    .process-video-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 1.4rem;
+      background: rgba(14, 14, 13, 0.9);
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .step-badges-indicator {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .step-pip {
+      width: 28px;
+      height: 3px;
+      background: var(--border-subtle);
+      border-radius: 2px;
+      transition: all var(--duration-fast) ease;
+    }
+
+    .step-pip.active {
+      background: var(--gold-primary);
+      width: 44px;
+      box-shadow: 0 0 10px rgba(197, 160, 89, 0.4);
+    }
+
+    /* Sequência pinada de construção do projeto */
+    .build-sequence {
+      min-height: 380svh;
+      background: var(--bg-surface-1);
+    }
+
+    .build-sequence-inner {
+      position: relative;
+      width: 100%;
+      height: 100svh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .build-sequence-heading {
+      position: absolute;
+      top: clamp(2rem, 7vw, 5rem);
+      left: clamp(1.25rem, 5vw, 3.5rem);
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .build-sequence-heading .section-title {
+      max-width: 10ch;
+      font-size: clamp(2.2rem, 4vw, 4rem);
+    }
+
+    .build-sequence-stage {
+      position: relative;
+      width: min(100%, 1120px);
+      margin: 0 auto;
+      aspect-ratio: 16 / 9;
+      max-height: 72svh;
+      border: 1px solid var(--gold-border);
+      background: #080807;
+      box-shadow: 0 35px 90px rgba(0, 0, 0, 0.65);
+    }
+
+    .build-sequence-stage::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background: linear-gradient(90deg, rgba(11, 11, 10, 0.48), transparent 45%, rgba(11, 11, 10, 0.22));
+    }
+
+    .build-sequence-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.8;
+      background: var(--bg-surface-2) url('assets/projeto-sala.png') center / cover no-repeat;
+    }
+
+    .build-sequence-progress {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 3;
+      height: 3px;
+      background: var(--gold-primary);
+      transform: scaleX(0);
+      transform-origin: left center;
+    }
+
+    .build-sequence-panel {
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      width: min(38%, 360px);
+      padding: clamp(1.35rem, 3vw, 2.25rem);
+      background: rgba(18, 18, 16, 0.88);
+      border: 1px solid var(--gold-border);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-50%);
+    }
+
+    .build-sequence-panel[data-position="left"] {
+      left: clamp(1rem, 5vw, 4rem);
+    }
+
+    .build-sequence-panel[data-position="right"] {
+      right: clamp(1rem, 5vw, 4rem);
+    }
+
+    .build-sequence-panel h3 {
+      margin: 0.7rem 0;
+      font-size: clamp(1.8rem, 3vw, 2.7rem);
+      color: var(--text-main);
+    }
+
+    .build-sequence-panel p {
+      font-size: 0.9rem;
+    }
+
+    .build-sequence-index {
+      display: block;
+      color: var(--gold-primary);
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+    }
+
+    /* Accordion / Cards Interativos do Processo */
+    .steps-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .step-item {
+      padding: 2rem;
+      background: var(--bg-surface-1);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      position: relative;
+      transition: all var(--duration-fast) var(--ease-lux);
+    }
+
+    .step-item:hover {
+      border-color: var(--gold-border);
+      background: var(--bg-surface-2);
+      transform: translateX(4px);
+    }
+
+    .step-item.active {
+      border-color: var(--gold-primary);
+      background: linear-gradient(145deg, rgba(29, 28, 25, 0.9), rgba(18, 18, 16, 0.9));
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .step-item.active::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--gold-primary);
+      box-shadow: 0 0 12px var(--gold-primary);
+    }
+
+    .step-top {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+    }
+
+    .step-number {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--gold-primary);
+      letter-spacing: 0.12em;
+    }
+
+    .step-duration {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--text-dim);
+      letter-spacing: 0.15em;
+    }
+
+    .step-heading {
+      font-family: var(--font-serif);
+      font-size: 1.75rem;
+      color: var(--text-main);
+      font-weight: 400;
+      margin-bottom: 0.75rem;
+    }
+
+    .step-desc {
+      font-size: 0.925rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+    }
+
+    .step-deliverables {
+      margin-top: 1.25rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .deliverable-chip {
+      font-size: 0.72rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       SEÇÃO: PORTFÓLIO DE PROJETOS (GALERIA EDITORIAL COM FILTROS)
+       ========================================================================== */
+    .portfolio-section {
+      padding: clamp(6rem, 10vw, 10rem) 0;
+    }
+
+    .portfolio-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 1.5rem;
+    }
+
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .filter-btn {
+      background: transparent;
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      padding: 0.55rem 1.2rem;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all var(--duration-fast) ease;
+    }
+
+    .filter-btn:hover {
+      color: var(--text-main);
+      border-color: var(--gold-border);
+    }
+
+    .filter-btn.active {
+      background: var(--gold-subtle);
+      color: var(--gold-light);
+      border-color: var(--gold-primary);
+    }
+
+    .portfolio-count {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-dim);
+    }
+
+    /* Grid Assimétrico Editorial (Bento Gallery) */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: var(--bg-surface-1);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      transition: transform var(--duration-normal) var(--ease-lux), border-color var(--duration-normal) var(--ease-lux);
+    }
+
+    .project-card:hover {
+      border-color: var(--gold-border);
+      transform: translateY(-6px);
+    }
+
+    /* Variação Arquitetônica de Colunas e Aspect Ratios */
+    .project-card.featured-wide {
+      grid-column: span 8;
+    }
+
+    .project-card.featured-tall {
+      grid-column: span 4;
+    }
+
+    .project-card.standard {
+      grid-column: span 6;
+    }
+
+    .project-card.compact {
+      grid-column: span 4;
+    }
+
+    .project-thumb-wrapper {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: 380px;
+    }
+
+    .project-card.featured-wide .project-thumb-wrapper {
+      height: 480px;
+    }
+
+    .project-card.featured-tall .project-thumb-wrapper {
+      height: 480px;
+    }
+
+    .project-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 1.2s var(--ease-lux);
+    }
+
+    .project-card:hover .project-image {
+      transform: scale(1.06);
+    }
+
+    .project-gradient-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(11, 11, 10, 0.05) 0%, rgba(11, 11, 10, 0.4) 60%, rgba(11, 11, 10, 0.95) 100%);
+      pointer-events: none;
+    }
+
+    .project-hover-reveal {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(14, 14, 13, 0.85);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-light);
+      backdrop-filter: blur(8px);
+      opacity: 0;
+      transform: scale(0.8);
+      transition: all var(--duration-fast) var(--ease-lux);
+    }
+
+    .project-card:hover .project-hover-reveal {
+      opacity: 1;
+      transform: scale(1);
+      border-color: var(--gold-primary);
+    }
+
+    .project-info {
+      padding: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .project-meta-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .project-category {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--gold-primary);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .project-location {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--text-dim);
+    }
+
+    .project-title {
+      font-family: var(--font-serif);
+      font-size: 1.85rem;
+      color: var(--text-main);
+      font-weight: 400;
+    }
+
+    .project-description {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .project-specs {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      margin-top: 0.5rem;
+      padding-top: 0.9rem;
+      border-top: 1px solid var(--border-subtle);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .spec-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* Modal / Lightbox do Projeto */
+    .lightbox-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(11, 11, 10, 0.95);
+      backdrop-filter: blur(25px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1rem, 4vw, 3rem);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--duration-fast) var(--ease-lux);
+    }
+
+    .lightbox-modal.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .lightbox-card {
+      background: var(--bg-surface-1);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      max-width: 1100px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8);
+      position: relative;
+    }
+
+    .lightbox-image-box {
+      height: 100%;
+      min-height: 480px;
+      background: #000;
+      position: relative;
+    }
+
+    .lightbox-image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .lightbox-content {
+      padding: clamp(2rem, 4vw, 3.5rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .lightbox-close-btn {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: rgba(24, 23, 21, 0.8);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--duration-fast) ease;
+      z-index: 10;
+    }
+
+    .lightbox-close-btn:hover {
+      border-color: var(--gold-primary);
+      color: var(--gold-light);
+    }
+
+    /* ==========================================================================
+       SEÇÃO: SOBRE NÓS (MARINA VASCONCELOS & MANIFESTO PESSOAL)
+       ========================================================================== */
+    .about-section {
+      padding: clamp(6rem, 10vw, 10rem) 0;
+      position: relative;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: clamp(3rem, 7vw, 7rem);
+      align-items: center;
+    }
+
+    .about-portrait-box {
+      position: relative;
+    }
+
+    .about-portrait-frame {
+      position: relative;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      border: 1px solid var(--border-card);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+      background: var(--bg-surface-2);
+    }
+
+    .about-portrait-img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      filter: contrast(1.05) brightness(0.92);
+      transition: filter var(--duration-slow) ease;
+    }
+
+    .about-portrait-box:hover .about-portrait-img {
+      filter: contrast(1.08) brightness(1);
+    }
+
+    .about-portrait-badge {
+      position: absolute;
+      bottom: -1.5rem;
+      right: -1.5rem;
+      background: var(--bg-surface-1);
+      border: 1px solid var(--gold-border);
+      padding: 1.4rem 1.8rem;
+      border-radius: var(--radius-sm);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(12px);
+    }
+
+    .about-portrait-badge .badge-title {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      color: var(--gold-light);
+      margin-bottom: 0.2rem;
+    }
+
+    .about-portrait-badge .badge-sub {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--text-dim);
+      letter-spacing: 0.15em;
+    }
+
+    .about-story {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+
+    .about-narrative {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--text-muted);
+    }
+
+    .about-signature-block {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-top: 1.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .signature-svg {
+      width: 170px;
+      height: 55px;
+      color: var(--gold-light);
+    }
+
+    .signature-meta {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .signature-name {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      color: var(--text-main);
+    }
+
+    .signature-role {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--gold-primary);
+      letter-spacing: 0.12em;
+    }
+
+    /* Estatísticas de Autoridade */
+    .authority-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+      background: var(--bg-surface-1);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 1.8rem;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .stat-number {
+      font-family: var(--font-serif);
+      font-size: 2.4rem;
+      color: var(--gold-light);
+      font-weight: 300;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* ==========================================================================
+       SEÇÃO: DEPOIMENTOS DE CLIENTES (LUXO & DISCRIÇÃO)
+       ========================================================================== */
+    .testimonials-section {
+      padding: clamp(6rem, 10vw, 10rem) 0;
+      background: linear-gradient(180deg, var(--bg-base) 0%, var(--bg-surface-1) 50%, var(--bg-base) 100%);
+      position: relative;
+    }
+
+    .testimonials-slider-container {
+      position: relative;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .testimonial-card {
+      background: var(--bg-surface-2);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-sm);
+      padding: clamp(2.5rem, 6vw, 4.5rem);
+      position: relative;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+      display: none;
+      animation: fadeInSlide 0.6s var(--ease-lux);
+    }
+
+    .testimonial-card.active {
+      display: block;
+    }
+
+    @keyframes fadeInSlide {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .testimonial-quote-icon {
+      color: var(--gold-primary);
+      width: 48px;
+      height: 48px;
+      margin-bottom: 2rem;
+      opacity: 0.85;
+    }
+
+    .testimonial-text {
+      font-family: var(--font-serif);
+      font-size: clamp(1.4rem, 2.4vw, 2.1rem);
+      line-height: 1.45;
+      color: var(--text-main);
+      font-weight: 300;
+      font-style: italic;
+      margin-bottom: 2.5rem;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 1.8rem;
+    }
+
+    .author-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .author-name {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--text-main);
+      letter-spacing: 0.05em;
+    }
+
+    .author-property {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--gold-light);
+      letter-spacing: 0.12em;
+    }
+
+    .slider-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .slider-arrow-btn {
+      background: var(--bg-surface-1);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--duration-fast) ease;
+    }
+
+    .slider-arrow-btn:hover {
+      border-color: var(--gold-primary);
+      color: var(--gold-light);
+      background: rgba(197, 160, 89, 0.08);
+      transform: scale(1.05);
+    }
+
+    .slider-dots {
+      display: flex;
+      gap: 0.6rem;
+    }
+
+    .slider-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--border-subtle);
+      cursor: pointer;
+      transition: all var(--duration-fast) ease;
+    }
+
+    .slider-dot.active {
+      background: var(--gold-primary);
+      transform: scale(1.4);
+      box-shadow: 0 0 10px rgba(197, 160, 89, 0.5);
+    }
+
+    /* ==========================================================================
+       SEÇÃO: FORMULÁRIO DE CONTATO & WHATSAPP EXCLUSIVO
+       ========================================================================== */
+    .contact-section {
+      padding: clamp(6rem, 10vw, 10rem) 0;
+      position: relative;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: clamp(3rem, 7vw, 7rem);
+      align-items: flex-start;
+    }
+
+    .contact-info-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    .direct-channels {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .channel-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.25rem;
+      padding: 1.4rem;
+      background: var(--bg-surface-1);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-sm);
+      transition: all var(--duration-fast) ease;
+    }
+
+    .channel-item:hover {
+      border-color: var(--gold-border);
+      background: var(--bg-surface-2);
+    }
+
+    .channel-icon {
+      width: 24px;
+      height: 24px;
+      color: var(--gold-primary);
+      flex-shrink: 0;
+      margin-top: 0.2rem;
+    }
+
+    .channel-details {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .channel-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--text-dim);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .channel-value {
+      font-size: 0.95rem;
+      color: var(--text-main);
+      font-weight: 400;
+    }
+
+    .whatsapp-featured-card {
+      background: linear-gradient(145deg, rgba(37, 211, 102, 0.08), rgba(197, 160, 89, 0.05));
+      border: 1px solid rgba(37, 211, 102, 0.25);
+      border-radius: var(--radius-sm);
+      padding: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .whatsapp-featured-card .badge-wa {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: #25D366;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      letter-spacing: 0.15em;
+    }
+
+    .whatsapp-featured-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* Formulário Estilo Concierge Privativo */
+    .contact-form-box {
+      background: var(--bg-surface-1);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: clamp(2rem, 5vw, 3.5rem);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+      position: relative;
+    }
+
+    .form-title-group {
+      margin-bottom: 2.2rem;
+      padding-bottom: 1.4rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .form-heading {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      color: var(--text-main);
+      font-weight: 400;
+    }
+
+    .form-sub {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-top: 0.35rem;
+    }
+
+    .booking-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form-label {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      background: var(--bg-surface-2);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-sm);
+      padding: 0.95rem 1.15rem;
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      font-size: 0.925rem;
+      outline: none;
+      transition: all var(--duration-fast) ease;
+    }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      border-color: var(--gold-primary);
+      background: var(--bg-surface-card);
+      box-shadow: 0 0 15px rgba(197, 160, 89, 0.15);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-feedback {
+      display: none;
+      padding: 1.25rem;
+      border-radius: var(--radius-sm);
+      background: rgba(197, 160, 89, 0.08);
+      border: 1px solid var(--gold-border);
+      color: var(--gold-light);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-top: 1rem;
+      animation: fadeIn 0.4s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-6px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ==========================================================================
+       RODAPÉ (SOFISTICAÇÃO & DETALHES DE MARCA)
+       ========================================================================== */
+    .site-footer {
+      background: var(--bg-surface-1);
+      border-top: 1px solid var(--border-subtle);
+      padding-top: clamp(4.5rem, 8vw, 7rem);
+      padding-bottom: 2.5rem;
+      position: relative;
+    }
+
+    .footer-top-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: clamp(2rem, 5vw, 4rem);
+      margin-bottom: 4.5rem;
+    }
+
+    .footer-brand-col {
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+    }
+
+    .footer-desc {
+      font-size: 0.9rem;
+      max-width: 38ch;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .footer-col-title {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 1.4rem;
+    }
+
+    .footer-links-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .footer-link {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      transition: color var(--duration-fast) ease;
+    }
+
+    .footer-link:hover {
+      color: var(--gold-primary);
+    }
+
+    .social-icons-row {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      transition: all var(--duration-fast) ease;
+      background: var(--bg-surface-2);
+    }
+
+    .social-btn:hover {
+      border-color: var(--gold-primary);
+      color: var(--gold-light);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(197, 160, 89, 0.15);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border-card);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-copyright {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--text-dim);
+      letter-spacing: 0.1em;
+    }
+
+    .footer-badge-quiet {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--gold-primary);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    /* ==========================================================================
+       WHATSAPP FLUTUANTE DISCRETO (BOUTIQUE PILL)
+       ========================================================================== */
+    .floating-wa-pill {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 75;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1.25rem;
+      background: rgba(18, 18, 16, 0.92);
+      border: 1px solid var(--gold-border);
+      border-radius: 50px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(16px);
+      color: var(--text-main);
+      cursor: pointer;
+      transition: all var(--duration-fast) var(--ease-lux);
+    }
+
+    .floating-wa-pill:hover {
+      transform: translateY(-4px) scale(1.02);
+      border-color: var(--gold-primary);
+      box-shadow: 0 15px 40px rgba(197, 160, 89, 0.2);
+    }
+
+    .floating-wa-icon {
+      width: 22px;
+      height: 22px;
+      color: #25D366;
+    }
+
+    .floating-wa-text {
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+
+    .floating-wa-status {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #25D366;
+      box-shadow: 0 0 6px #25D366;
+    }
+
+    /* Botão Voltar ao Topo */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      left: 2rem;
+      z-index: 75;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--bg-surface-1);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition: all var(--duration-fast) ease;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .back-to-top:hover {
+      border-color: var(--gold-primary);
+      color: var(--gold-light);
+      transform: translateY(-3px);
+    }
+
+    /* ==========================================================================
+       RESPONSIVIDADE (MEDIA QUERIES)
+       ========================================================================== */
+    @media (max-width: 1080px) {
+      .philosophy-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .process-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+      }
+
+      .about-portrait-box {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+      }
+
+      .footer-top-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+      }
+
+      .project-card.featured-wide,
+      .project-card.featured-tall,
+      .project-card.standard,
+      .project-card.compact {
+        grid-column: span 6;
+      }
+
+      .lightbox-card {
+        grid-template-columns: 1fr;
+      }
+
+      .lightbox-image-box {
+        min-height: 350px;
+      }
+    }
+
+    @media (max-width: 768px) {
+
+      .desktop-nav,
+      .header-cta {
+        display: none;
+      }
+
+      .mobile-menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .pillars-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card.featured-wide,
+      .project-card.featured-tall,
+      .project-card.standard,
+      .project-card.compact {
+        grid-column: span 1;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+
+      .footer-top-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .authority-stats {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .floating-wa-pill .floating-wa-text {
+        display: none;
+      }
+
+      .floating-wa-pill {
+        padding: 0.8rem;
+        border-radius: 50%;
+      }
+
+      .about-portrait-badge {
+        right: 0;
+        bottom: -1rem;
+        padding: 1rem 1.2rem;
+      }
+
+      .build-sequence-stage {
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        max-height: 76svh;
+      }
+
+      .build-sequence {
+        min-height: 350svh;
+      }
+
+      .build-sequence-panel {
+        width: calc(100% - 2rem);
+        left: 1rem !important;
+        right: 1rem !important;
+      }
+
+      .build-sequence-heading {
+        top: 1.5rem;
+      }
+
+      .build-sequence-heading .section-title {
+        max-width: 8ch;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Efeito Sutil de Película/Grão Cinematográfico -->
+  <div class="film-grain" aria-hidden="true"></div>
+
+  <!-- HEADER NAVEGAÇÃO -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-wrapper">
+      <a href="#inicio" class="brand-logo" aria-label="Studio Aura - Início">
+        <span class="brand-title">Studio Aura</span>
+        <span class="brand-tag">Interiores • São Paulo</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Navegação Principal">
+        <a href="#processo" class="nav-link">Processo</a>
+        <a href="#portfolio" class="nav-link">Portfólio</a>
+        <a href="#sobre" class="nav-link">Marina Vasconcelos</a>
+        <a href="#depoimentos" class="nav-link">Depoimentos</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#contato" class="btn btn-outline header-cta">Agendar Consulta</a>
+        <button class="mobile-menu-btn" id="openMobileMenu" aria-label="Abrir menu de navegação">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <line x1="3" y1="7" x2="21" y2="7"></line>
+            <line x1="3" y1="17" x2="21" y2="17"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MENU MOBILE DRAWER -->
+  <div class="mobile-nav-drawer" id="mobileDrawer">
+    <button class="mobile-close-btn" id="closeMobileMenu" aria-label="Fechar menu">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <a href="#inicio" class="nav-link mobile-link">Início</a>
+    <a href="#processo" class="nav-link mobile-link">Processo</a>
+    <a href="#portfolio" class="nav-link mobile-link">Portfólio</a>
+    <a href="#sobre" class="nav-link mobile-link">Marina Vasconcelos</a>
+    <a href="#depoimentos" class="nav-link mobile-link">Depoimentos</a>
+    <a href="#contato" class="btn btn-gold mobile-link" style="margin-top: 1rem;">Agendar Consulta</a>
+  </div>
+
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION: ABERTURA COM VÍDEO DE FUNDO
+         ========================================================================== -->
+    <section class="hero-section" id="inicio">
+      <div class="hero-media-wrapper">
+        <video id="heroVideo" class="hero-video" autoplay loop muted playsinline preload="auto">
+          <source src="assets/interior-dark-video.mp4" type="video/mp4">
+          Seu navegador não suporta a tag de vídeo.
+        </video>
+        <div class="hero-overlay"></div>
+      </div>
+
+      <div class="container hero-content">
+        <div class="hero-main-text">
+          <h1 class="hero-headline">
+            A elegância que habita o <em>silêncio dos detalhes</em>.
+          </h1>
+
+          <div class="hero-cta-group">
+            <a href="#portfolio" class="btn btn-gold">
+              <span>Ver Portfólio</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="scroll-indicator">
+        <span class="scroll-line"></span>
+        <span>Deslize para vivenciar</span>
+      </div>
+    </section>
+
+    <!-- DIVISOR -->
+    <div class="section-divider"></div>
+
+    <!-- ==========================================================================
+         SEÇÃO: PROCESSO DE TRABALHO EM 3 ETAPAS (COM VÍDEO DAS CAMADAS)
+         ========================================================================== -->
+    <section class="process-section build-sequence" id="processo">
+      <div class="container build-sequence-inner">
+        <div class="build-sequence-heading">
+          <div class="tag-badge"><span class="dot"></span><span>Build Sequence</span></div>
+        </div>
+
+        <div class="build-sequence-stage">
+          <video class="build-sequence-video" id="layersVideo" preload="metadata" playsinline
+            poster="assets/projeto-sala.png" aria-label="Montagem de um projeto de interiores por camadas">
+            <source src="assets/video-camadas.mp4" type="video/mp4">
+          </video>
+          <div class="build-sequence-progress" id="buildSequenceProgress"></div>
+          <span class="build-sequence-caption">Studio Aura / método autoral</span>
+
+          <article class="build-sequence-panel" data-position="left">
+            <span class="build-sequence-index">01 / INTENÇÃO</span>
+            <h3>Escutamos o espaço.</h3>
+            <p>O projeto começa com uma leitura sensível da rotina, da luz e daquilo que precisa permanecer em silêncio.
+            </p>
+          </article>
+
+          <article class="build-sequence-panel" data-position="right">
+            <span class="build-sequence-index">02 / MATÉRIA</span>
+            <h3>Desenhamos a matéria.</h3>
+            <p>Curamos proporções, texturas e materiais para que cada escolha tenha presença sem excesso.</p>
+          </article>
+
+          <article class="build-sequence-panel" data-position="left">
+            <span class="build-sequence-index">03 / ENTREGA</span>
+            <h3>Entregamos atmosfera.</h3>
+            <p>A obra ganha vida em uma experiência completa, acompanhada de perto até o último detalhe.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- DIVISOR -->
+    <div class="section-divider"></div>
+
+    <!-- ==========================================================================
+         SEÇÃO: FILOSOFIA & MANIFESTO DE LUXO DISCRETO
+         ========================================================================== */
+    -->
+
+    <section class="philosophy-section" id="filosofia">
+      <div class="container">
+        <div class="philosophy-grid">
+          <div>
+            <div class="tag-badge" style="margin-bottom: 1.5rem;">
+              <span>Manifesto Studio Aura</span>
+            </div>
+            <blockquote class="philosophy-quote">
+              “O luxo discreto não precisa clamar por atenção. Ele é reconhecido no toque da pedra natural, no corte
+              preciso da nogueira e no conforto invisível que abraça quem nele vive.”
+            </blockquote>
+          </div>
+
+          <div class="philosophy-text-blocks">
+            <p>
+              No Studio Aura, concebemos cada residência como uma galeria viva de sensações íntimas. Fugimos de
+              tendências passageiras e fórmulas repetitivas do mercado de luxo. Acreditamos na força dos materiais
+              orgânicos com autenticidade, na luz natural como elemento escultural e no rigor construtivo absoluto.
+            </p>
+            <p>
+              Inspirados na hospitalidade de hotéis boutique internacionais e na serenidade das galerias de arte
+              contemporânea, transformamos metros quadrados em narrativas silenciosas de aconchego, acústica impecável e
+              sofisticação permanente.
+            </p>
+          </div>
+        </div>
+
+        <div class="pillars-grid">
+          <div class="pillar-card">
+            <span class="pillar-num">01 / LUZ & ATMOSFERA</span>
+            <h3 class="pillar-title">Iluminação Cênica Invisível</h3>
+            <p class="pillar-desc">
+              Luz indireta e temperaturas de cor calibradas para acompanhar os ciclos naturais do dia, criando
+              transições suaves do amanhecer ao intimismo do entardecer.
+            </p>
+          </div>
+
+          <div class="pillar-card">
+            <span class="pillar-num">02 / MATÉRIA-PRIMA PURA</span>
+            <h3 class="pillar-title">Curadoria Mineral & Têxtil</h3>
+            <p class="pillar-desc">
+              Mármores nobres selecionados in loco nas jazidas, carvalho europeu com acabamento fosco e tecidos em linho
+              cru e seda com toque extraordinário.
+            </p>
+          </div>
+
+          <div class="pillar-card">
+            <span class="pillar-num">03 / ARTE & AUTORIA</span>
+            <h3 class="pillar-title">Diálogo com Obras de Arte</h3>
+            <p class="pillar-desc">
+              Espaços minuciosamente projetados para acolher coleções de arte, esculturas e mobiliário assinado por
+              mestres do design modernista e contemporâneo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIVISOR -->
+    <div class="section-divider"></div>
+
+    <!-- ==========================================================================
+         SEÇÃO: PORTFÓLIO DE PROJETOS SELECIONADOS
+         ========================================================================== -->
+    <section class="portfolio-section" id="portfolio">
+      <div class="container">
+        <div class="section-header">
+          <div class="tag-badge">
+            <span class="dot"></span>
+            <span>Obras Assinadas</span>
+          </div>
+          <h2 class="section-title">
+            Projetos que definem uma <em>nova atmosfera</em>.
+          </h2>
+          <p class="section-subtitle">
+            Uma seleção de residências e refúgios urbanos onde cada milímetro reflete nossa busca incessante pelo
+            equilíbrio entre arte, matéria e serenidade.
+          </p>
+        </div>
+
+        <!-- Filtros do Portfólio -->
+        <div class="portfolio-toolbar">
+          <div class="filter-tabs" role="tablist">
+            <button class="filter-btn active" data-filter="all">Todos os Projetos</button>
+            <button class="filter-btn" data-filter="living">Livings & Sociais</button>
+            <button class="filter-btn" data-filter="intimo">Suítes & Spa</button>
+            <button class="filter-btn" data-filter="gourmet">Gourmet & Leitura</button>
+          </div>
+          <span class="portfolio-count" id="projectCount">Exibindo 7 residências autorais</span>
+        </div>
+
+        <!-- Grid de Projetos -->
+        <div class="projects-grid" id="projectsContainer">
+
+          <!-- Projeto 1: Residência Jardins (projeto-sala.png) -->
+          <article class="project-card featured-wide" data-category="living" data-title="Residência Jardins"
+            data-loc="Jardins, São Paulo" data-area="680 m²" data-year="2024" data-img="assets/projeto-sala.png"
+            data-desc="Living integrado com pé-direito imponente, marcenaria ripada em nogueira canaletto, lareira em mármore nero marquina e iluminação indireta oculta para criar um refúgio acolhedor e escultural no coração dos Jardins.">
+            <div class="project-thumb-wrapper">
+              <img src="assets/projeto-sala.png" alt="Living de luxo Residência Jardins" class="project-image"
+                loading="lazy">
+              <div class="project-gradient-overlay"></div>
+              <div class="project-hover-reveal" aria-label="Ampliar projeto">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta-row">
+                <span class="project-category">Living & Estar</span>
+                <span class="project-location">Jardins • SP</span>
+              </div>
+              <h3 class="project-title">Residência Jardins</h3>
+              <p class="project-description">
+                Harmonia entre o calor da madeira natural, mármore nero e mobiliário com design italiano sob medida.
+              </p>
+              <div class="project-specs">
+                <span class="spec-item"><strong>Área:</strong> 680 m²</span>
+                <span class="spec-item">•</span>
+                <span class="spec-item"><strong>Conclusão:</strong> 2024</span>
+                <span class="spec-item">•</span>
+                <span class="spec-item"><strong>Status:</strong> Concluído</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projeto 2: Penthouse Cidade Jardim (projeto-sala-2.png) -->
+          <article class="project-card featured-tall" data-category="living" data-title="Penthouse Cidade Jardim"
+            data-loc="Cidade Jardim, São Paulo" data-area="520 m²" data-year="2024" data-img="assets/projeto-sala-2.png"
+            data-desc="Cobertura panorâmica concebida com linhas arquitetônicas puras, integração com a vista paulistana, painéis acústicos em carvalho francês e sofás curvos com revestimento em linho bouclé.">
+            <div class="project-thumb-wrapper">
+              <img src="assets/projeto-sala-2.png" alt="Penthouse Cidade Jardim" class="project-image" loading="lazy">
+              <div class="project-gradient-overlay"></div>
+              <div class="project-hover-reveal">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta-row">
+                <span class="project-category">Living Panorâmico</span>
+                <span class="project-location">Cidade Jardim • SP</span>
+              </div>
+              <h3 class="project-title">Penthouse Cidade Jardim</h3>
+              <p class="project-description">
+                Luminotécnica precisa com luz difusa e mobiliário de alta silhueta orgânica.
+              </p>
+              <div class="project-specs">
+                <span class="spec-item"><strong>Área:</strong> 520 m²</span>
+                <span class="spec-item">•</span>
+                <span class="spec-item"><strong>Ano:</strong> 2024</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projeto 3: Villa Fazenda Boa Vista (projeto-quarto.png) -->
+          <article class="project-card standard" data-category="intimo" data-title="Villa Boa Vista"
+            data-loc="Porto Feliz, SP" data-area="430 m²" data-year="2023" data-img="assets/projeto-quarto.png"
+            data-desc="Suíte master voltada para a paisagem campestre. Cabeceira estofada em camurça mineral, painéis amadeirados que camuflam acessos aos closets e uma paleta cromática terrosa reconfortante.">
+            <div class="project-thumb-wrapper">
+              <img src="assets/projeto-quarto.png" alt="Suíte Master Villa Boa Vista" class="project-image"
+                loading="lazy">
+              <div class="project-gradient-overlay"></div>
+              <div class="project-hover-reveal">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta-row">
+                <span class="project-category">Suíte Master</span>
+                <span class="project-location">Fazenda Boa Vista • SP</span>
+              </div>
+              <h3 class="project-title">Villa Boa Vista</h3>
+              <p class="project-description">
+                Refúgio de descompressão absoluta com textura aveludada e marcenaria suavemente iluminada.
+              </p>
+              <div class="project-specs">
+                <span class="spec-item"><strong>Área:</strong> 430 m²</span>
+                <span class="spec-item">•</span>
+                <span class="spec-item"><strong>Ano:</strong> 2023</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projeto 4: Cozinha Gourmet Vila Nova Conceição (projeto-cozinha.png) -->
+          <article class="project-card standard" data-category="gourmet" data-title="Espaço Gourmet VNC"
+            data-loc="Vila Nova Conceição, SP" data-area="290 m²" data-year="2024" data-img="assets/projeto-cozinha.png"
+            data-desc="Cozinha de alta gastronomia planejada para acolher encontros privados. Ilha monolítica em granito escovado preto, metais em bronze oxidado e marcenaria escura com ferragens ocultas alemãs.">
+            <div class="project-thumb-wrapper">
+              <img src="assets/projeto-cozinha.png" alt="Cozinha Gourmet Vila Nova Conceição" class="project-image"
+                loading="lazy">
+              <div class="project-gradient-overlay"></div>
+              <div class="project-hover-reveal">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta-row">
+                <span class="project-category">Cozinha & Gourmet</span>
+                <span class="project-location">Vila Nova Conceição • SP</span>
+              </div>
+              <h3 class="project-title">Espaço Gourmet VNC</h3>
+              <p class="project-description">
+                A tecnologia gastronômica invisível sob a sobriedade de superfícies esculturais.
+              </p>
+              <div class="project-specs">
+                <span class="spec-item"><strong>Área:</strong> 290 m²</span>
+                <span class="spec-item">•</span>
+                <span class="spec-item"><strong>Ano:</strong> 2024</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projeto 5: Sala de Banho Travertino (projeto-banheiro.png) -->
+          <article class="project-card compact" data-category="intimo" data-title="Sala de Banho & SPA"
+            data-loc="Alto de Pinheiros, SP" data-area="85 m²" data-year="2023" data-img="assets/projeto-banheiro.png"
+            data-desc="Espaço de banho em mármore travertino navona com banheira esculpida no bloco maciço da rocha. Louças especiais, metais em tom ouro escovado fosco e nichos com luz difusa de spa.">
+            <div class="project-thumb-wrapper">
+              <img src="assets/projeto-banheiro.png" alt="Sala de Banho Spa Alto de Pinheiros" class="project-image"
+                loading="lazy">
+              <div class="project-gradient-overlay"></div>
+              <div class="project-hover-reveal">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta-row">
+                <span class="project-category">Sala de Banho & SPA</span>
+                <span class="project-location">Alto de Pinheiros • SP</span>
+              </div>
+              <h3 class="project-title">Spa Alto de Pinheiros</h3>
+              <p class="project-description">
+                Mármore monolítico e luz zenital em harmonia para restauração do bem-estar diário.
+              </p>
+              <div class="project-specs">
+                <span class="spec-item"><strong>Área:</strong> 85 m²</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projeto 6: Biblioteca Privada & Adega (projeto-biblioteca.png) -->
+          <article class="project-card compact" data-category="gourmet" data-title="Biblioteca & Adega Itaim"
+            data-loc="Itaim Bibi, SP" data-area="210 m²" data-year="2024" data-img="assets/projeto-biblioteca.png"
+            data-desc="Espaço intimista para leitura, apreciação de rótulos raros e reuniões reservadas. Estantes do piso ao teto em madeira ébano e iluminação pontual de galeria sobre poltronas clássicas.">
+            <div class="project-thumb-wrapper">
+              <img src="assets/projeto-biblioteca.png" alt="Biblioteca Privada Itaim Bibi" class="project-image"
+                loading="lazy">
+              <div class="project-gradient-overlay"></div>
+              <div class="project-hover-reveal">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta-row">
+                <span class="project-category">Estudo & Coleção</span>
+                <span class="project-location">Itaim Bibi • SP</span>
+              </div>
+              <h3 class="project-title">Biblioteca Privada</h3>
+              <p class="project-description">
+                Conforto acústico e presença marcante de madeiras nobres e couro conhaque.
+              </p>
+              <div class="project-specs">
+                <span class="spec-item"><strong>Área:</strong> 210 m²</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projeto 7: Lounge Terracota (projeto-terracota.png) -->
+          <article class="project-card compact" data-category="living" data-title="Lounge Terracota Morumbi"
+            data-loc="Morumbi, SP" data-area="340 m²" data-year="2023" data-img="assets/projeto-terracota.png"
+            data-desc="Ambiente sensorial que combina pigmentos minerais de argila terracota com jardim de inverno biofílico e peças de cerâmica de artistas contemporâneos brasileiros.">
+            <div class="project-thumb-wrapper">
+              <img src="assets/projeto-terracota.png" alt="Lounge Terracota Morumbi" class="project-image"
+                loading="lazy">
+              <div class="project-gradient-overlay"></div>
+              <div class="project-hover-reveal">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta-row">
+                <span class="project-category">Lounge Sensorial</span>
+                <span class="project-location">Morumbi • SP</span>
+              </div>
+              <h3 class="project-title">Lounge Terracota</h3>
+              <p class="project-description">
+                Calor dos tons terrosos em contraste com o verde tropical e iluminação perimetral.
+              </p>
+              <div class="project-specs">
+                <span class="spec-item"><strong>Área:</strong> 340 m²</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- MODAL / LIGHTBOX DE DETALHES DO PROJETO -->
+    <div class="lightbox-modal" id="projectModal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="lightbox-card">
+        <button class="lightbox-close-btn" id="closeModalBtn" aria-label="Fechar detalhes do projeto">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+
+        <div class="lightbox-image-box">
+          <img id="modalImg" src="" alt="Imagem do Projeto">
+        </div>
+
+        <div class="lightbox-content">
+          <div>
+            <div class="tag-badge" style="margin-bottom: 1rem;">
+              <span id="modalCategory">LIVING & ESTAR</span>
+            </div>
+            <h2 id="modalTitle" class="font-serif"
+              style="font-size: 2.4rem; margin-bottom: 0.5rem; color: var(--text-main);">Residência Jardins</h2>
+            <div class="font-mono" id="modalMeta" style="margin-bottom: 1.5rem; color: var(--gold-primary);">JARDINS •
+              SÃO PAULO | 680 M²</div>
+            <p id="modalDesc" style="line-height: 1.8; font-size: 0.95rem; color: var(--text-muted);">Descrição do
+              projeto.</p>
+          </div>
+
+          <div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 1.5rem; margin-bottom: 1.5rem;">
+              <div class="font-mono" style="margin-bottom: 0.8rem; font-size: 0.7rem; color: var(--text-dim);">MATERIAIS
+                ESTRUTURAIS SELECIONADOS</div>
+              <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                <span class="deliverable-chip">Mármore Exclusivo</span>
+                <span class="deliverable-chip">Marcenaria em Nogueira</span>
+                <span class="deliverable-chip">Iluminação DALI</span>
+                <span class="deliverable-chip">Design Italiano</span>
+              </div>
+            </div>
+
+            <a href="#contato" class="btn btn-gold" id="modalCtaBtn" style="width: 100%;">
+              <span>Consultar Viabilidade Deste Estilo</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DIVISOR -->
+    <div class="section-divider"></div>
+
+    <!-- ==========================================================================
+         SEÇÃO: SOBRE NÓS (MARINA VASCONCELOS)
+         ========================================================================== -->
+    <section class="about-section" id="sobre">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-portrait-box">
+            <div class="about-portrait-frame">
+              <!-- Retrato Editorial de Alta Densidade Estética para a Arquiteta -->
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1000&q=85"
+                alt="Marina Vasconcelos fundadora do Studio Aura" class="about-portrait-img" loading="lazy">
+            </div>
+
+            <div class="about-portrait-badge">
+              <h4 class="badge-title">Marina Vasconcelos</h4>
+              <p class="badge-sub">Arquiteta & Diretora Criativa • FAU-USP</p>
+            </div>
+          </div>
+
+          <div class="about-story">
+            <div class="tag-badge">
+              <span class="dot"></span>
+              <span>Liderança Criativa</span>
+            </div>
+
+            <h2 class="section-title" style="margin-top: 0.5rem;">
+              Arquitetura que nasce do <em>escutar atento</em>.
+            </h2>
+
+            <div class="about-narrative">
+              <p style="margin-bottom: 1.25rem;">
+                Com formação pela Faculdade de Arquitetura e Urbanismo da USP e especialização em Milão na vanguarda do
+                design mobiliário italiano, fundei o Studio Aura com um propósito inegociável: conceber lares que
+                acolhem a alma com serenidade e precisão.
+              </p>
+              <p>
+                Para mim, o verdadeiro luxo contemporâneo não está nos excessos ou ornamentos desnecessários, mas sim na
+                qualidade do silêncio espacial, no conforto tátil dos materiais nobres e na iluminação que transforma
+                cada retorno ao lar em uma experiência restauradora. Atuo pessoalmente na concepção e na curadoria de
+                cada projeto que assume a nossa assinatura.
+              </p>
+            </div>
+
+            <div class="authority-stats">
+              <div class="stat-item">
+                <span class="stat-number">14+</span>
+                <span class="stat-label">Anos de trajetória autoral</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">90+</span>
+                <span class="stat-label">Residências entregues</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">03</span>
+                <span class="stat-label">Distinções em arquitetura de luxo</span>
+              </div>
+            </div>
+
+            <div class="about-signature-block">
+              <!-- Assinatura Caligráfica em SVG Vetorial Sofisticado -->
+              <svg class="signature-svg" viewBox="0 0 200 60" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M20 40 C 25 15, 30 10, 45 35 C 55 45, 65 20, 75 30 C 85 40, 95 25, 110 32 C 120 38, 135 15, 150 28 C 165 40, 180 20, 190 35 M 35 30 L 170 30">
+                </path>
+              </svg>
+              <div class="signature-meta">
+                <span class="signature-name">Marina Vasconcelos</span>
+                <span class="signature-role">Fundadora & Arquiteta Titular</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIVISOR -->
+    <div class="section-divider"></div>
+
+    <!-- ==========================================================================
+         SEÇÃO: DEPOIMENTOS DE CLIENTES EXCLUSIVOS
+         ========================================================================== -->
+    <section class="testimonials-section" id="depoimentos">
+      <div class="container">
+        <div class="section-header"
+          style="text-align: center; max-width: 720px; margin-left: auto; margin-right: auto;">
+          <div class="tag-badge" style="margin: 0 auto 1.5rem auto;">
+            <span>Confiança & Discrição</span>
+          </div>
+          <h2 class="section-title">
+            A percepção de quem já <em>habita nossos espaços</em>.
+          </h2>
+          <p class="section-subtitle" style="margin-left: auto; margin-right: auto;">
+            A relação com nossos clientes é pautada pelo sigilo, respeito ao tempo e fidelidade absoluta aos mais
+            rigorosos padrões de excelência internacional.
+          </p>
+        </div>
+
+        <div class="testimonials-slider-container">
+          <!-- Card 1 -->
+          <div class="testimonial-card active" data-index="0">
+            <svg class="testimonial-quote-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+            </svg>
+            <p class="testimonial-text">
+              “A Marina tem a sensibilidade rara de transformar concreto e mármore em calor humano. Morar na nossa
+              cobertura nos Jardins após a reforma do Studio Aura é como viver permanentemente no melhor hotel boutique
+              do mundo.”
+            </p>
+            <div class="testimonial-author">
+              <div class="author-info">
+                <span class="author-name">Helena & Carlos Drummond</span>
+                <span class="author-property">Penthouse Jardins • 680 m²</span>
+              </div>
+              <span class="font-mono">PROJETO CONCLUÍDO 2024</span>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="testimonial-card" data-index="1">
+            <svg class="testimonial-quote-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+            </svg>
+            <p class="testimonial-text">
+              “O processo com o Studio Aura foi impecável do primeiro render à entrega das chaves. A atenção com a
+              acústica da nossa residência na Fazenda Boa Vista e com a iluminação noturna superou todas as expectativas
+              da nossa família.”
+            </p>
+            <div class="testimonial-author">
+              <div class="author-info">
+                <span class="author-name">Roberto Meirelles</span>
+                <span class="author-property">Villa Fazenda Boa Vista • 850 m²</span>
+              </div>
+              <span class="font-mono">PROJETO CONCLUÍDO 2023</span>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="testimonial-card" data-index="2">
+            <svg class="testimonial-quote-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+            </svg>
+            <p class="testimonial-text">
+              “Nenhum detalhe passou despercebido. A seleção de marcenaria e os blocos de travertino do spa trouxeram
+              uma paz diária que não imaginávamos ser possível em plena São Paulo. Profissionalismo no mais alto
+              escalão.”
+            </p>
+            <div class="testimonial-author">
+              <div class="author-info">
+                <span class="author-name">Dra. Sofia Albuquerque</span>
+                <span class="author-property">Residência Vila Nova Conceição • 420 m²</span>
+              </div>
+              <span class="font-mono">PROJETO CONCLUÍDO 2024</span>
+            </div>
+          </div>
+
+          <!-- Controles do Slider -->
+          <div class="slider-controls">
+            <button class="slider-arrow-btn" id="prevTestimonial" aria-label="Depoimento anterior">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+            </button>
+
+            <div class="slider-dots" id="testimonialDots">
+              <span class="slider-dot active" data-index="0"></span>
+              <span class="slider-dot" data-index="1"></span>
+              <span class="slider-dot" data-index="2"></span>
+            </div>
+
+            <button class="slider-arrow-btn" id="nextTestimonial" aria-label="Próximo depoimento">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIVISOR -->
+    <div class="section-divider"></div>
+
+    <!-- ==========================================================================
+         SEÇÃO: FORMULÁRIO DE CONTATO & ATENDIMENTO PRIVATIVO
+         ========================================================================== -->
+    <section class="contact-section" id="contato">
+      <div class="container">
+        <div class="contact-grid">
+
+          <div class="contact-info-panel">
+            <div>
+              <div class="tag-badge">
+                <span class="dot"></span>
+                <span>Atendimento Privativo</span>
+              </div>
+              <h2 class="section-title" style="margin-top: 1rem;">
+                Inicie a concepção do seu <em>próximo refúgio</em>.
+              </h2>
+              <p class="section-subtitle">
+                Atendemos um número restrito de projetos simultâneos para assegurar presença integral e dedicação
+                artesanal a cada detalhe da sua residência.
+              </p>
+            </div>
+
+            <!-- Card WhatsApp Direto com Marina / Concierge -->
+            <div class="whatsapp-featured-card">
+              <span class="badge-wa">
+                <span class="dot"></span>
+                CANAL DIRETO & ÁGIL
+              </span>
+              <p>
+                Prefere uma conversa imediata via WhatsApp? Nosso concierge arquitetônico está à disposição para enviar
+                o portfólio impresso e agendar uma reunião no escritório dos Jardins.
+              </p>
+              <a href="https://wa.me/5511998471928?text=Ol%C3%A1%20Marina%2C%20gostaria%20de%20agendar%20uma%20conversa%20sobre%20o%20projeto%20de%20interiores%20da%20minha%20resid%C3%AAncia."
+                target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="width: fit-content;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                  </path>
+                </svg>
+                <span>Falar no WhatsApp</span>
+              </a>
+            </div>
+
+            <div class="direct-channels">
+              <div class="channel-item">
+                <svg class="channel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <div class="channel-details">
+                  <span class="channel-label">Endereço do Studio</span>
+                  <span class="channel-value">Al. Gabriel Monteiro da Silva, 1840 • Jardins, São Paulo - SP</span>
+                </div>
+              </div>
+
+              <div class="channel-item">
+                <svg class="channel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L1 7"></path>
+                </svg>
+                <div class="channel-details">
+                  <span class="channel-label">E-mail Institucional</span>
+                  <a href="mailto:contato@studioaura.com.br" class="channel-value">marina@studioaura.com.br</a>
+                </div>
+              </div>
+
+              <div class="channel-item">
+                <svg class="channel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <div class="channel-details">
+                  <span class="channel-label">Horário de Atendimento</span>
+                  <span class="channel-value">Segunda a Sexta, das 09h às 19h (com hora marcada)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formulário Concierge -->
+          <div class="contact-form-box">
+            <div class="form-title-group">
+              <h3 class="form-heading">Solicitar Análise de Projeto</h3>
+              <p class="form-sub">Preencha os dados abaixo para receber nosso contato privativo em até 24 horas úteis.
+              </p>
+            </div>
+
+            <form id="contactForm" class="booking-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name" class="form-label">Nome Completo *</label>
+                  <input type="text" id="name" name="name" class="form-input" placeholder="Ex: Roberto Silveira"
+                    required>
+                </div>
+                <div class="form-group">
+                  <label for="phone" class="form-label">Telefone / WhatsApp *</label>
+                  <input type="tel" id="phone" name="phone" class="form-input" placeholder="(11) 99999-9999" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label">E-mail Principal *</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="roberto@email.com.br"
+                  required>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="projectType" class="form-label">Tipologia do Imóvel</label>
+                  <select id="projectType" name="projectType" class="form-select">
+                    <option value="Apartamento / Penthouse">Apartamento / Penthouse</option>
+                    <option value="Residência Urbana">Residência Urbana</option>
+                    <option value="Casa de Campo / Litoral">Casa de Campo / Litoral</option>
+                    <option value="Ambiente Corporativo Boutique">Ambiente Corporativo Boutique</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="area" class="form-label">Metragem Estimada</label>
+                  <select id="area" name="area" class="form-select">
+                    <option value="Até 250 m²">Até 250 m²</option>
+                    <option value="250 a 500 m²">250 a 500 m²</option>
+                    <option value="500 a 1.000 m²">500 a 1.000 m²</option>
+                    <option value="Acima de 1.000 m²">Acima de 1.000 m²</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="message" class="form-label">Detalhes da sua visão ou necessidades</label>
+                <textarea id="message" name="message" class="form-textarea"
+                  placeholder="Conte-nos sobre a localização do imóvel, previsão de início das obras ou expectativas específicas..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-gold" id="submitBtn">
+                <span id="btnText">Enviar Solicitação Privativa</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+
+              <div class="form-feedback" id="formFeedback">
+                Sua solicitação foi recebida com sucesso. Marina Vasconcelos e a equipe do Studio Aura entrarão em
+                contato em até 24 horas úteis para dar início à sua experiência.
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       RODAPÉ ELEGANTE COM REDES SOCIAIS & LOCALIZAÇÃO
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand-col">
+          <a href="#inicio" class="brand-logo" aria-label="Studio Aura - Início">
+            <span class="brand-title">Studio Aura</span>
+            <span class="brand-tag">Interiores • São Paulo</span>
+          </a>
+          <p class="footer-desc">
+            Escritório autoral especializado em design de interiores residencial de altíssimo padrão. Criando espaços de
+            quiet luxury com matérias-primas puras e precisão luminotécnica.
+          </p>
+          <div class="social-icons-row">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn"
+              aria-label="Acompanhe no Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" class="social-btn"
+              aria-label="Inspirações no Pinterest">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <line x1="12" y1="4" x2="12" y2="20"></line>
+                <path d="M12 4a8 8 0 1 0 5.66 13.66"></path>
+                <path d="M9 13c1-2 2-4 3-5"></path>
+              </svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn"
+              aria-label="Perfil no LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Navegação</h4>
+          <ul class="footer-links-list">
+            <li><a href="#filosofia" class="footer-link">Filosofia de Marca</a></li>
+            <li><a href="#processo" class="footer-link">Metodologia em 3 Etapas</a></li>
+            <li><a href="#portfolio" class="footer-link">Coleção de Projetos</a></li>
+            <li><a href="#sobre" class="footer-link">Marina Vasconcelos</a></li>
+            <li><a href="#depoimentos" class="footer-link">Depoimentos Privados</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Especialidades</h4>
+          <ul class="footer-links-list">
+            <li><a href="#portfolio" class="footer-link">Penthouses & Coberturas</a></li>
+            <li><a href="#portfolio" class="footer-link">Villas de Campo & Praia</a></li>
+            <li><a href="#portfolio" class="footer-link">Iluminação Cênica DALI</a></li>
+            <li><a href="#portfolio" class="footer-link">Curadoria de Arte & Mobiliário</a></li>
+            <li><a href="#portfolio" class="footer-link">Gestão Executiva Turnkey</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Studio São Paulo</h4>
+          <p class="footer-desc" style="margin-bottom: 0.8rem;">
+            Alameda Gabriel Monteiro da Silva, 1840<br>
+            Jardins • São Paulo - SP<br>
+            CEP 01442-002
+          </p>
+          <span class="font-mono" style="font-size: 0.65rem; color: var(--gold-light);">ATENDIMENTO SOB
+            AGENDAMENTO</span>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span class="footer-copyright">
+          © 2026 STUDIO AURA INTERIORES LTDA. TODOS OS DIREITOS RESERVADOS.
+        </span>
+        <span class="footer-badge-quiet">
+          QUIET LUXURY • SÃO PAULO
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOTÃO FLUTUANTE DISCRETO DO WHATSAPP -->
+  <a href="https://wa.me/5511998471928?text=Ol%C3%A1%20Marina%2C%20gostaria%20de%20conversar%20sobre%20um%20projeto%20com%20o%20Studio%20Aura."
+    target="_blank" rel="noopener noreferrer" class="floating-wa-pill"
+    aria-label="Conversar com Studio Aura pelo WhatsApp">
+    <svg class="floating-wa-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path
+        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+      </path>
+    </svg>
+    <span class="floating-wa-text">Concierge WhatsApp</span>
+    <span class="floating-wa-status"></span>
+  </a>
+
+  <!-- BOTÃO VOLTAR AO TOPO -->
+  <button class="back-to-top" id="backToTop" aria-label="Voltar ao início">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+      <line x1="12" y1="19" x2="12" y2="5"></line>
+      <polyline points="5 12 12 5 19 12"></polyline>
+    </svg>
+  </button>
+
+  <!-- ==========================================================================
+       JAVASCRIPT INLINE (INTERATIVIDADE, CONTROLE DE VÍDEO, LIGHTBOX, FILTROS)
+       ========================================================================== -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      /* 1. Header com Efeito Glassmorphism ao Rolar */
+      const header = document.getElementById('siteHeader');
+      const backToTop = document.getElementById('backToTop');
+
+      window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        if (scrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+
+        if (scrollY > 600) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      }, { passive: true });
+
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      /* 2. Menu Mobile Drawer */
+      const openMobileBtn = document.getElementById('openMobileMenu');
+      const closeMobileBtn = document.getElementById('closeMobileMenu');
+      const mobileDrawer = document.getElementById('mobileDrawer');
+      const mobileLinks = document.querySelectorAll('.mobile-link');
+
+      const toggleMenu = (isOpen) => {
+        if (isOpen) {
+          mobileDrawer.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        } else {
+          mobileDrawer.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      };
+
+      openMobileBtn.addEventListener('click', () => toggleMenu(true));
+      closeMobileBtn.addEventListener('click', () => toggleMenu(false));
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => toggleMenu(false));
+      });
+
+      /* Build Sequence: o scroll controla o tempo do vídeo enquanto o palco permanece fixo. */
+      const buildSequence = document.getElementById('processo');
+      const buildInner = document.querySelector('.build-sequence-inner');
+      const buildVideo = document.getElementById('layersVideo');
+      const buildPanels = document.querySelectorAll('.build-sequence-panel');
+      const buildProgress = document.getElementById('buildSequenceProgress');
+
+      if (buildSequence && buildInner && buildVideo && window.gsap && window.ScrollTrigger) {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const setupBuildSequence = () => {
+          const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+          if (reduceMotion) {
+            gsap.set(buildPanels, { autoAlpha: 1, x: 0 });
+            if (buildVideo.duration) buildVideo.currentTime = buildVideo.duration;
+            return;
+          }
+
+          const videoPlayhead = { progress: 0 };
+          const timeline = gsap.timeline({
+            scrollTrigger: {
+              trigger: buildSequence,
+              start: 'top top',
+              end: 'bottom bottom',
+              pin: buildInner,
+              pinSpacing: false,
+              scrub: 1,
+              invalidateOnRefresh: true
+            }
+          });
+
+          timeline.to(videoPlayhead, {
+            progress: 1,
+            duration: 3,
+            ease: 'none',
+            onUpdate: () => {
+              if (buildVideo.duration) {
+                buildVideo.currentTime = videoPlayhead.progress * buildVideo.duration;
+              }
+              if (buildProgress) buildProgress.style.transform = `scaleX(${timeline.progress()})`;
+            }
+          }, 0);
+
+          timeline.fromTo(buildPanels[0],
+            { autoAlpha: 0, x: -70 },
+            { autoAlpha: 1, x: 0, duration: 0.35, ease: 'power2.out' }, 0.08
+          ).to(buildPanels[0], { autoAlpha: 0, x: -35, duration: 0.28 }, 0.82);
+
+          timeline.fromTo(buildPanels[1],
+            { autoAlpha: 0, x: 70 },
+            { autoAlpha: 1, x: 0, duration: 0.35, ease: 'power2.out' }, 1.05
+          ).to(buildPanels[1], { autoAlpha: 0, x: 35, duration: 0.28 }, 1.82);
+
+          timeline.fromTo(buildPanels[2],
+            { autoAlpha: 0, x: -70 },
+            { autoAlpha: 1, x: 0, duration: 0.35, ease: 'power2.out' }, 2.05
+          ).to(buildPanels[2], { autoAlpha: 0, x: -35, duration: 0.28 }, 2.84);
+        };
+
+        setupBuildSequence();
+        buildVideo.addEventListener('loadedmetadata', () => ScrollTrigger.refresh(), { once: true });
+        window.addEventListener('load', () => ScrollTrigger.refresh(), { once: true });
+      }
+
+      /* 3. Controle de Som do Vídeo Hero */
+      const heroVideo = document.getElementById('heroVideo');
+      const soundToggle = document.getElementById('soundToggle');
+      const soundOffIcon = document.getElementById('soundOffIcon');
+      const soundOnIcon = document.getElementById('soundOnIcon');
+      const soundLabel = document.getElementById('soundLabel');
+
+      if (heroVideo && soundToggle) {
+        soundToggle.addEventListener('click', () => {
+          heroVideo.muted = !heroVideo.muted;
+          if (heroVideo.muted) {
+            soundOffIcon.style.display = 'block';
+            soundOnIcon.style.display = 'none';
+            soundLabel.textContent = 'ÁUDIO DO AMBIENTE [MUTED]';
+          } else {
+            soundOffIcon.style.display = 'none';
+            soundOnIcon.style.display = 'block';
+            soundLabel.textContent = 'ÁUDIO DO AMBIENTE [ATIVO]';
+            // Garante playback se browser exigir interação
+            heroVideo.play().catch(() => { });
+          }
+        });
+      }
+
+      /* 4. Interatividade na Seção de Processo (3 Etapas com video-camadas) */
+      const stepItems = document.querySelectorAll('.step-item');
+      const videoStageName = document.getElementById('videoStageName');
+      const videoLayerTag = document.getElementById('videoLayerTag');
+      const pips = [
+        document.getElementById('pip1'),
+        document.getElementById('pip2'),
+        document.getElementById('pip3')
+      ];
+      const layersVideo = document.getElementById('layersVideo');
+
+      stepItems.forEach(item => {
+        item.addEventListener('click', () => {
+          stepItems.forEach(s => s.classList.remove('active'));
+          item.classList.add('active');
+
+          const stepNum = parseInt(item.getAttribute('data-step'), 10);
+          const stageText = item.getAttribute('data-stage');
+          const tagText = item.getAttribute('data-tag');
+
+          if (videoStageName) videoStageName.textContent = stageText;
+          if (videoLayerTag) videoLayerTag.textContent = tagText;
+
+          // Atualiza os pips indicadores
+          pips.forEach((pip, idx) => {
+            if (idx === (stepNum - 1)) {
+              pip.classList.add('active');
+            } else {
+              pip.classList.remove('active');
+            }
+          });
+
+          // Se quiser navegar no tempo do vídeo das camadas:
+          if (layersVideo && layersVideo.duration) {
+            const fraction = (stepNum - 1) / 3;
+            layersVideo.currentTime = layersVideo.duration * fraction;
+          }
+        });
+      });
+
+      /* 5. Filtros de Projetos no Portfólio */
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const projectCards = document.querySelectorAll('.project-card');
+      const projectCount = document.getElementById('projectCount');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const filter = btn.getAttribute('data-filter');
+          let visibleCount = 0;
+
+          projectCards.forEach(card => {
+            const category = card.getAttribute('data-category');
+            if (filter === 'all' || category === filter) {
+              card.style.display = '';
+              visibleCount++;
+            } else {
+              card.style.display = 'none';
+            }
+          });
+
+          if (projectCount) {
+            projectCount.textContent = `Exibindo ${visibleCount} ${visibleCount === 1 ? 'residência autoral' : 'residências autorais'}`;
+          }
+        });
+      });
+
+      /* 6. Lightbox Modal do Portfólio */
+      const projectModal = document.getElementById('projectModal');
+      const closeModalBtn = document.getElementById('closeModalBtn');
+      const modalImg = document.getElementById('modalImg');
+      const modalCategory = document.getElementById('modalCategory');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalMeta = document.getElementById('modalMeta');
+      const modalDesc = document.getElementById('modalDesc');
+
+      projectCards.forEach(card => {
+        card.addEventListener('click', () => {
+          const title = card.getAttribute('data-title');
+          const loc = card.getAttribute('data-loc');
+          const area = card.getAttribute('data-area');
+          const year = card.getAttribute('data-year') || '2024';
+          const img = card.getAttribute('data-img');
+          const desc = card.getAttribute('data-desc');
+          const category = card.querySelector('.project-category')?.textContent || 'PROJETO RESIDENCIAL';
+
+          modalImg.src = img;
+          modalImg.alt = title;
+          modalCategory.textContent = category.toUpperCase();
+          modalTitle.textContent = title;
+          modalMeta.textContent = `${loc.toUpperCase()} | ${area} | ${year}`;
+          modalDesc.textContent = desc;
+
+          projectModal.classList.add('active');
+          projectModal.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      const closeLightbox = () => {
+        projectModal.classList.remove('active');
+        projectModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      };
+
+      if (closeModalBtn) closeModalBtn.addEventListener('click', closeLightbox);
+      projectModal.addEventListener('click', (e) => {
+        if (e.target === projectModal) closeLightbox();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && projectModal.classList.contains('active')) {
+          closeLightbox();
+        }
+      });
+
+      /* 7. Slider de Depoimentos */
+      const testimonialCards = document.querySelectorAll('.testimonial-card');
+      const testimonialDots = document.querySelectorAll('.slider-dot');
+      const prevTestimonialBtn = document.getElementById('prevTestimonial');
+      const nextTestimonialBtn = document.getElementById('nextTestimonial');
+      let currentTestimonialIndex = 0;
+
+      const showTestimonial = (index) => {
+        testimonialCards.forEach((c, idx) => {
+          c.classList.toggle('active', idx === index);
+        });
+        testimonialDots.forEach((d, idx) => {
+          d.classList.toggle('active', idx === index);
+        });
+        currentTestimonialIndex = index;
+      };
+
+      if (prevTestimonialBtn && nextTestimonialBtn) {
+        prevTestimonialBtn.addEventListener('click', () => {
+          let newIndex = currentTestimonialIndex - 1;
+          if (newIndex < 0) newIndex = testimonialCards.length - 1;
+          showTestimonial(newIndex);
+        });
+
+        nextTestimonialBtn.addEventListener('click', () => {
+          let newIndex = (currentTestimonialIndex + 1) % testimonialCards.length;
+          showTestimonial(newIndex);
+        });
+
+        testimonialDots.forEach(dot => {
+          dot.addEventListener('click', () => {
+            const index = parseInt(dot.getAttribute('data-index'), 10);
+            showTestimonial(index);
+          });
+        });
+      }
+
+      /* 8. Formulário de Contato com Validação & Feedback Boutique */
+      const contactForm = document.getElementById('contactForm');
+      const formFeedback = document.getElementById('formFeedback');
+      const submitBtn = document.getElementById('submitBtn');
+      const btnText = document.getElementById('btnText');
+
+      if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+
+          const name = document.getElementById('name').value.trim();
+          const phone = document.getElementById('phone').value.trim();
+          const email = document.getElementById('email').value.trim();
+
+          if (!name || !phone || !email) {
+            alert('Por favor, preencha todos os campos obrigatórios (Nome, Telefone e E-mail).');
+            return;
+          }
+
+          // Simula envio requintado com feedback tátil
+          submitBtn.disabled = true;
+          btnText.textContent = 'Processando Registro Privativo...';
+
+          setTimeout(() => {
+            submitBtn.style.display = 'none';
+            formFeedback.style.display = 'block';
+            contactForm.reset();
+          }, 900);
+        });
+      }
+
+      /* 9. Scroll Reveal Suave usando IntersectionObserver (Sem window.addEventListener de scroll pesado) */
+      const revealElements = document.querySelectorAll(
+        '.pillar-card, .step-item, .project-card, .about-grid, .testimonial-card'
+      );
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+            obs.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      revealElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(16px)';
+        el.style.transition = 'opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1)';
+        observer.observe(el);
+      });
+
+    });
+  </script>
+</body>
+
+</html>
